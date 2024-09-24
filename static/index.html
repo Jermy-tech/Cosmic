@@ -9,16 +9,8 @@
     <title id="tab-title">Home</title>
     <link rel="stylesheet" href="/assets/styles/main.css?v=8" />
     <link rel="stylesheet" href="/assets/styles/themes/default.css?v=5" />
-    <style>
-      body, html {
-        display: none;
-      }
-    </style>
-  </head>
-  <body class="center" onload="splashtext()">
-    <!-- Password Prompt -->
     <script>
-      const correctPassword = 'password';
+      const correctPassword = 'dereklikestouching3-';
 
       // Check if the password is already saved in localStorage
       if (localStorage.getItem('sitePassword') === correctPassword) {
@@ -29,15 +21,16 @@
         let userPassword = prompt("Wait!~, A password is needed to access this website.");
         if (userPassword === correctPassword) {
           // Save the password in localStorage
-          localStorage.setItem('sitePassword', userPassword);
-          document.body.style.display = 'block';
+          localStorage.setItem('sitePassword', correctPassword);
+          document.body.style.display = 'block'; // Show the body content
         } else {
           alert('Incorrect password. Access denied.');
           document.body.innerHTML = ''; // Clear content if password is incorrect
         }
       }
     </script>
-
+  </head>
+  <body class="center" onload="splashtext()">
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
