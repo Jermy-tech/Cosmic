@@ -9,8 +9,25 @@
     <title id="tab-title">Home</title>
     <link rel="stylesheet" href="/assets/styles/main.css?v=8" />
     <link rel="stylesheet" href="/assets/styles/themes/default.css?v=5" />
+    <style>
+      body, html {
+        display: none;
+      }
+    </style>
   </head>
   <body class="center" onload="splashtext()">
+    <!-- Password Prompt -->
+    <script>
+      const password = 'dereklikestouching3-';
+      let userPassword = prompt("Wait!~, A password is needed to access this website.");
+      if (userPassword === password) {
+        document.body.style.display = 'block';
+      } else {
+        alert('Incorrect password. Access denied.');
+        document.body.innerHTML = ''; // Clear content if password is incorrect
+      }
+    </script>
+
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
