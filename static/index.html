@@ -18,13 +18,23 @@
   <body class="center" onload="splashtext()">
     <!-- Password Prompt -->
     <script>
-      const password = 'dereklikestouching3-';
-      let userPassword = prompt("Wait!~, A password is needed to access this website.");
-      if (userPassword === password) {
+      const correctPassword = 'dereklikestouching3-';
+
+      // Check if the password is already saved in localStorage
+      if (localStorage.getItem('sitePassword') === correctPassword) {
+        // Password is correct, show the content
         document.body.style.display = 'block';
       } else {
-        alert('Incorrect password. Access denied.');
-        document.body.innerHTML = ''; // Clear content if password is incorrect
+        // Password is not saved, prompt the user
+        let userPassword = prompt("Wait!~, A password is needed to access this website.");
+        if (userPassword === correctPassword) {
+          // Save the password in localStorage
+          localStorage.setItem('sitePassword', userPassword);
+          document.body.style.display = 'block';
+        } else {
+          alert('Incorrect password. Access denied.');
+          document.body.innerHTML = ''; // Clear content if password is incorrect
+        }
       }
     </script>
 
